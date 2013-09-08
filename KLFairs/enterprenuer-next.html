@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+  <title>KLevents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<img src="inner-bg.jpg" alt="" width="320" height="auto" style="position:absolute;"/>
+<div class="icon-div" style="margin-left:30px;"><a href="register-booth.html" class="blue-link"><img src="register_blue.jpg" alt="" width="63" height="auto" /><br />
+Register Booth</a></div>
+<div class="icon-div" style="margin-left:20px;"><a href="business.html" class="blue-link"><img src="bridge.jpg" alt="" width="63" height="63" /><br />
+Business Bridging</a></div>
+
+<script src="jquery.min.js"></script> 
+<script src='swipe.js'></script> 
+<script>
+
+// pure JS
+window.mySwipe = new Swipe(document.getElementById('slider'), {
+  startSlide: 0,
+  speed: 400,
+  auto: 3000,
+  continuous: true,
+  disableScroll: false,
+  stopPropagation: false,
+  callback: function(pos) {
+	  var i = bullets.length;
+      while (i--) {
+        bullets[i].className = ' ';
+      }
+      bullets[pos].className = 'on';
+	  },
+  transitionEnd: function(index, elem) {}
+});
+
+var bullets = document.getElementById('position').getElementsByTagName('li');
+
+ /*with jQuery
+ window.mySwipe = $('#mySwipe').Swipe().data('Swipe');*/
+
+</script>
+</body>
+</html>

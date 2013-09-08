@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+  <title>KLevents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div id='slider' class='swipe'>
+    <div class='swipe-wrap'>
+      <div><a href="visitor-register.html"><img src="banner1.jpg" width="320px" height="auto" /></a> </div>
+      <div><img src="banner2.jpg" width="320px" height="auto" /></div>
+      <div><img src="banner3.jpg" width="320px" height="auto" /></div>
+    </div>
+    <!--<div align="center">
+      <nav>
+        <ul id='position'>
+          <li class='on'></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+    </div>-->
+</div>
+<div id="menu">
+<img src="menu-bg.png" width="320px" height="auto" alt="" style="position:absolute; margin-top:-99px; border-bottom:5px solid #fff; "/>
+<div><a href="enterprenuer.html"><img src="enterprenuer.jpg" alt="" width="73" height="auto" style="position:absolute; margin-top:-30px; margin-left:20px;" /></a><a href="organizers.html"><img src="organiser.jpg" alt="" width="73" height="auto"  style="position:absolute; margin-top:10px; margin-left:120px;" /></a><a href="events.html"><img src="events.jpg" alt="" width="75" height="auto"  style="position:absolute; margin-top:-30px; margin-left:220px;"/></a></div>
+</div>
+<script src="jquery.min.js"></script> 
+<script src='swipe.js'></script> 
+<script>
+
+// pure JS
+window.mySwipe = new Swipe(document.getElementById('slider'), {
+  startSlide: 0,
+  speed: 400,
+  auto: 3000,
+  continuous: true,
+  disableScroll: false,
+  stopPropagation: false,
+  callback: function(pos) {
+	  var i = bullets.length;
+      while (i--) {
+        bullets[i].className = ' ';
+      }
+      bullets[pos].className = 'on';
+	  },
+  transitionEnd: function(index, elem) {}
+});
+
+var bullets = document.getElementById('position').getElementsByTagName('li');
+
+ /*with jQuery
+ window.mySwipe = $('#mySwipe').Swipe().data('Swipe');*/
+
+</script>
+</body>
+</html>

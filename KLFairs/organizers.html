@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+  <title>KLevents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<img src="organiser_title.jpg" alt="" width="63" height="auto"  style="margin-top:20px; margin-left:30px;"/><span class="green-text">Organizers</span><br /><br />
+<div style="padding:20px;">
+<span style="color:#7abe47;">Centre's Profile</span>
+<p>The Kuala Lumpur Convention Centre is a purpose-built convention and exhibition facility strategically located in the Kuala Lumpur City Centre overlooking the iconic PETRONAS Twin Towers and the 50-acre KLCC Park. Spanning five levels, the Centre offers 22,659m2 of flexible function space including 12,310m2 of column-free exhibition halls including a 2,600m2 standalone marquee, 3,000 capacity Plenary Hall, 500-seat Plenary Theatre, Grand Ballroom for 2,000 diners, Banquet Hall for 750, Conference Hall for 1,800, 20 meeting rooms, ancillary facilities, and the latest in wireless, 3G telecommunications and digital audio-visual services. The Centre also prides itself on having a professional team to ensure the delivery of world-class services and top-notch culinary offerings; the latter served up by a 51-strong culinary brigade.
+</p>
+</div>
+<img src="inner-arrow.jpg" alt="" width="70" height="auto" style="position: absolute;"/>
+<div class="inner-icon" style="margin-left:60px; margin-top:30px;"><a href="hall-booking.html" class="green-link"><img src="register_green.jpg" alt="" width="63" height="auto" /><br />
+Hall Booking  </a></div>
+<div class="inner-icon" style="margin-left:10px; margin-top:30px;"><a href="calendar.html" class="green-link"><img src="calendar.jpg" alt="" width="63" height="auto" /><br />
+Calendar of Events</a></div>
+<script src="jquery.min.js"></script> 
+<script src='swipe.js'></script> 
+<script>
+
+// pure JS
+window.mySwipe = new Swipe(document.getElementById('slider'), {
+  startSlide: 0,
+  speed: 400,
+  auto: 3000,
+  continuous: true,
+  disableScroll: false,
+  stopPropagation: false,
+  callback: function(pos) {
+	  var i = bullets.length;
+      while (i--) {
+        bullets[i].className = ' ';
+      }
+      bullets[pos].className = 'on';
+	  },
+  transitionEnd: function(index, elem) {}
+});
+
+var bullets = document.getElementById('position').getElementsByTagName('li');
+
+ /*with jQuery
+ window.mySwipe = $('#mySwipe').Swipe().data('Swipe');*/
+
+</script>
+</body>
+</html>
